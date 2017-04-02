@@ -18,4 +18,7 @@ script:
     - scons config
     - export RM_TS_PRINT_CMD=1
     - export RM_TS_PEDANTIC=0
+    - sudo scons --prefix=/usr install -j4
+    - ls -la /usr/bin/rmlint
+    - ls -la /usr/share/man/man1/rmlint.1.gz
     - sudo -E nosetests3 -s -v -a '!slow'
